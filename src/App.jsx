@@ -12,7 +12,9 @@ function App() {
 				<Route path="/" element={<HomePage />} />
 				<Route path="/productPage" element={<ProductPage />} />
 				<Route path="/cartPage" element={<CartPage />} />
+				
 			</Routes>
+		
 		</div>
 	);
 }
