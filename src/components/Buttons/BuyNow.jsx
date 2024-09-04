@@ -1,16 +1,11 @@
 import React from 'react'
 
-export default function BuyNow({Delete,itemId,className}) {
+export default function BuyNow() {
 
-  
   return (
-
-    <button onClick={()=>Delete(itemId)}
-   className={className}
-
->
+  <button>
   
-  Delete
+  Read More
     </button>
   )
 }
