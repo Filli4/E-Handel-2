@@ -1,10 +1,5 @@
-import React from 'react'
+import React from "react";
 
 export default function AddToCart() {
-  return (
-    <button>
-
-      AddToCart
-    </button>
-  )
+	return <button>Add To Cart</button>;
 }
