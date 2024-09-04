@@ -10,7 +10,7 @@
 // }, []);
 
 // --Viktor--
-const FetchItems = async (setProducts, amount) => {
+const FetchItems = async (setProducts, amount=20) => {
 	try {
 		const url = `https://fakestoreapi.com/products?limit=${amount}`;
 		const response = await fetch(url);
