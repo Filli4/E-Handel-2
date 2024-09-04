@@ -9,8 +9,9 @@ function App() {
     <div>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/productPage" element={<ProductPage />} />
+        {/* <Route path="/productPage" element={<ProductPage />} /> */}
         <Route path="/cartPage" element={<CartPage />} />
+        <Route path="/product/:id" element={<ProductPage />} />
       </Routes>
     </div>
   );
