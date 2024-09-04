@@ -1,18 +1,18 @@
 // Example of how to use:
 
-// const [products, setProducts] = useState([]);
+// const [singleProducts, setSingleProducts] = useState([]);
 
 // useEffect(() => {
 // 	async function HandleFetch() {
-// 		FetchItems(setProducts, 32);
+// 		FetchItems(setSingleProduct, 1);
 // 	}
 // 	HandleFetch();
 // }, []);
 
 // --Viktor--
-const FetchItems = async (setProducts, amount) => {
+const FetchSingleItem = async (setSingleProduct, id) => {
 	try {
-		const url = `https://fakestoreapi.com/products?limit=${amount}`;
+		const url = `https://fakestoreapi.com/products/${id}`;
 		const response = await fetch(url);
 
 		if (!response.ok) {
@@ -20,10 +20,11 @@ const FetchItems = async (setProducts, amount) => {
 		}
 
 		const result = await response.json();
-		setProducts(result);
+		setSingleProduct(result);
+		console.log("Result from fetch at site load is: ", result);
 	} catch (error) {
 		console.log(error);
 	}
 };
 
-export default FetchItems;
+export default FetchSingleItem;
