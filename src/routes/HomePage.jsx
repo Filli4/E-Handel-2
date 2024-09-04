@@ -1,3 +1,12 @@
+
+import React from "react";
+import Card from "../components/Card";
+
+function HomePage() {
+  return (
+    <div className="flex items-center justify-center h-screen bg-gray-100"></div>
+  );
+
 import React, { useContext } from "react";
 import { ProductProvider, ProductContext } from "/src/context/ProductProvider.jsx";
 
@@ -9,6 +18,7 @@ function HomePage() {
 			<h2 className="text-4xl font-bold text-blue-500">Home Page</h2>
 		</div>
 	);
+
 }
 
 export default HomePage;
