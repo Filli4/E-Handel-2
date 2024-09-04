@@ -7,7 +7,10 @@ export default function BuyNow({Delete,itemId,className}) {
 
     <button onClick={()=>Delete(itemId)}
    className={className}
-   type='button'
-    >Delete</button>
+
+>
+  
+  Delete
+    </button>
   )
 }

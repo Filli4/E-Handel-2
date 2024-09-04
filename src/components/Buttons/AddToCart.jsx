@@ -1,7 +1,13 @@
 import React from 'react'
 
-export default function AddToCart() {
+export default function AddToCart({Add,itemId,className}) {
   return (
-    <div>AddToCart</div>
+    <button onClick={()=>Add(itemId)} 
+    className={className}
+    
+    >
+
+      AddToCart
+    </button>
   )
 }
