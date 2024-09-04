@@ -1,32 +1,34 @@
-import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useState, useEffect, useContext } from "react";
+import { useParams } from "react-router-dom";
+import { ProductProvider, ProductContext } from "/src/context/ProductProvider.jsx"; 
+import FetchSingleItem from "../services/FetchSingleItem";
 
 function ProductPage() {
-  const { id } = useParams();
-  const [product, setProduct] = useState(null);
+	const { products, setProducts, singleProduct, setSingleProduct } = useContext(ProductContext);
 
-  useEffect(() => {
-    fetch(`https://fakestoreapi.com/products/${id}`)
-      .then(response => response.json())
-      .then(data => setProduct(data))
-      .catch(err => console.error("Error fetching data:", err));
-  }, [id]);
+	const { id } = useParams();
 
-  if (!product) {
-    return <div>Loading...</div>;
-  }
+	useEffect(() => {
+		async function handleFetch() {
+			FetchSingleItem(setSingleProduct, id);
+		}
+		handleFetch();
+	}, [id]);
 
-  return (
-    <div>
-			<h1>{product.title}</h1>
-			<p>{product.rating.rate }</p>
-			<img src={product.image} alt={product.title} style={{ width: '200px' }} />
-			<p>Price: ${product.price}</p>
-			<p>Category: {product.category}</p>
-      <p>{product.description}</p>
-      
-    </div>
-  );
+	if (!singleProduct) {
+		return <div>Loading...</div>;
+	}
+
+	return (
+		<div>
+			<h1>{singleProduct.title}</h1>
+			<p>{singleProduct.rating.rate}</p>
+			<img src={singleProduct.image} alt={singleProduct.title} style={{ width: "200px" }} />
+			<p>Price: ${singleProduct.price}</p>
+			<p>Category: {singleProduct.category}</p>
+			<p>{singleProduct.description}</p>
+		</div>
+	);
 }
 
 export default ProductPage;
