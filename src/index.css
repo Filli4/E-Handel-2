@@ -1,3 +1,33 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  h1, h2, h3, h4 {
+    @apply font-bold;
+  }
+  h1 {
+    @apply text-4xl;
+  }
+  main, header, footer {
+    @apply container mx-auto;
+  }
+  main {
+    @apply px-2 py-3;
+  }
+}
+
+@layer components {
+  .addtocartbtn {
+    @apply bg-gray-300 hover:bg-gray-200 px-3 py-5 w-full rounded-lg;
+  }
+  .pricetag {
+    @apply  font-light text-4xl
+  }
+  .pricetag span {
+    @apply  font-light text-sm
+  }
+  .rating {
+    @apply bg-orange-800 text-white rounded-md
+  }
+}
