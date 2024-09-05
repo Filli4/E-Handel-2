@@ -1,10 +1,12 @@
-import { useState, useEffect } from "react";
+import { useContext, useEffect } from "react";
 import React from "react";
+import { ProductProvider, ProductContext } from "/src/context/ProductProvider.jsx"; 
 import FetchItems from "../services/FetchItems";
 import Card from "../components/Card";
 
 export default function Shop() {
-	const [products, setProducts] = useState([]);
+
+	const { products, setProducts } = useContext(ProductContext);
 
 	useEffect(() => {
 		async function HandleFetch() {
@@ -21,6 +23,7 @@ export default function Shop() {
 					imgSrc={product.image}
 					title={product.title}
 					price={product.price}
+					id={product.id}
 				/>
 			))}
 		</div>
