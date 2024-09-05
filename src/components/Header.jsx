@@ -12,9 +12,9 @@ const Header = () => {
 				</p>
 				<nav className="flex gap-8 text-sm font-medium tracking-wide">
 					<Link to={"/"}>HOME</Link>
-					<Link to={"/"}>STORE</Link>
-					<Link to={"CartPage"}>CART</Link>
-					<Link to={"CartPage"} className="fa fa-solid fa-user self-center"></Link>
+					<Link to={"/shop"}>SHOP</Link>
+					<Link to={"/cart"}>CART</Link>
+					<Link to={"/cart"} className="fa fa-solid fa-user self-center"></Link>
 				</nav>
 			</div>
 		</header>
