@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import React from 'react'
 import FetchItems from "../services/FetchItems"
+import Card from "./Card"
+
+
 export default function Shop() {
    
     const [products, setProducts] = useState([]);
@@ -15,17 +18,20 @@ export default function Shop() {
 
 
   return (
-
-    <div >
+<div className="flex flex-wrap gap-x-7 justify-center p-2 bg-gray-100 ">
     {products.map((product)=>(
-        <div key={product.id}>
-    <img src={product.image} alt={product.title} />
-    <h1>{product.title}</h1>
-    <span>{product.price}</span>
-    <p>{product.description}</p>
-    
-    </div>
+<Card
+key={product.id}
+imgSrc={product.image}
+title={product.title}
+price={product.price}
+description={product.description} 
+
+/>
+
     ))}
-    </div>
+  
+</div>
+   
   )
 }
