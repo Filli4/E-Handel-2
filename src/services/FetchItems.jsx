@@ -15,7 +15,13 @@ const FetchItems = async (setProducts, amount = 20) => {
 	try {
 		// Utför en fetch
 		const url = `https://fakestoreapi.com/products?limit=${amount}`;
-		const response = await fetch(url);
+		const response = await fetch(url, {
+			method: "GET",
+			headers: {
+				"Content-Type": "application/json",
+				Accept: "application/json",
+			},
+		});
 
 		// Om svaret inte är ok så visa error
 		if (!response.ok) {

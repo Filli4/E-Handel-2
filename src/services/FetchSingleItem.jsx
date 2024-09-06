@@ -15,7 +15,13 @@ const FetchSingleItem = async (setSingleProduct, id) => {
 	try {
 		// Utför en fetch
 		const url = `https://fakestoreapi.com/products/${id}`;
-		const response = await fetch(url);
+		const response = await fetch(url, {
+			method: "GET",
+			headers: {
+				"Content-Type": "application/json",
+				Accept: "application/json",
+			},
+		});
 
 		// Om svaret inte är ok så visa error
 		if (!response.ok) {
