@@ -16,16 +16,18 @@ export default function AddToCart({ product }) {
   };
 
   return (
-    <div>
-      {addmsj && (
-        <p className="text-green-500 mt-2 py-3">
-          The product has been added to your cart. <a className="font-semibold text-green-700" href='/cart'>Check your cart page →</a>
-        </p>
-      )}
-      <button onClick={handleAddToCart} className="addtocartbtn">
-        Add to Cart
-      </button>
-      
-    </div>
-  );
+		<div>
+			{addmsj && (
+				<p className="text-green-500 mt-2 py-3">
+					The product has been added to your cart.{" "}
+					<a className="font-semibold text-green-700" href="/cart">
+						Check your cart page →
+					</a>
+				</p>
+			)}
+			<button onClick={handleAddToCart} disabled={addmsj} className="addtocartbtn">
+				{addmsj ? `Adding ${product.title}...` : "Add to Cart"}
+			</button>
+		</div>
+	);
 }
