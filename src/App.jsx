@@ -8,11 +8,14 @@ import Shop from "./routes/Shop";
 function App() {
 	return (
 		<main>
+			{/*--Routing--*/}
 			<Routes>
+				{/* Definiera routes för hemsidan */}
 				<Route path="/" element={<HomePage />} />
 				<Route path="/shop" element={<Shop />} />
 				<Route path="/cart" element={<CartPage />} />
 				{/* <Route path="/productPage" element={<ProductPage />} /> <-- use for no product found */}
+				{/* Dynamisk route för produktsidor baserat på produktid */}
 				<Route path="/product/:id" element={<ProductPage />} />
 			</Routes>
 		</main>

@@ -10,17 +10,31 @@
 // }, []);
 
 // --Viktor--
-const FetchItems = async (setProducts, amount=20) => {
+const FetchItems = async (setProducts, amount = 20) => {
+	// Försök att hämta alla produkter baserat på dess id
 	try {
+		// Utför en fetch
 		const url = `https://fakestoreapi.com/products?limit=${amount}`;
-		const response = await fetch(url);
+		const response = await fetch(url, {
+			method: "GET",
+			headers: {
+				"Content-Type": "application/json",
+				Accept: "application/json",
+			},
+		});
 
+		// Om svaret inte är ok så visa error
 		if (!response.ok) {
 			throw new Error(`HTTP error! status: ${response.status}`);
 		}
 
+		// Konvertera json-objekt till javascript-objekt
 		const result = await response.json();
+
+		// Sätt Products till resultatet
 		setProducts(result);
+
+		// Fånga upp error
 	} catch (error) {
 		console.log(error);
 	}
