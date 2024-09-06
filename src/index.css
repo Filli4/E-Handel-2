@@ -9,17 +9,20 @@
   h1 {
     @apply text-4xl;
   }
+  h2 {
+    @apply text-3xl py-1;
+  }
   main, header, footer {
     @apply container mx-auto;
   }
   main {
-    @apply px-2 py-3;
+    @apply py-10 min-h-[80svh];
   }
 }
 
 @layer components {
   .addtocartbtn {
-    @apply bg-gray-300 hover:bg-gray-200 px-3 py-5 w-full rounded-lg;
+    @apply bg-indigo-600 hover:bg-indigo-500  px-3 py-5 w-full rounded-lg text-white;
   }
   .pricetag {
     @apply  font-light text-4xl

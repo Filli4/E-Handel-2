@@ -9,22 +9,23 @@ export default function AddToCart({ product }) {
     addToCart(product);
     setAddmsj(true);
     
-    // hide msj after 3 seconds
+    // hide msj after 6 seconds
     setTimeout(() => {
       setAddmsj(false);
-    }, 3000);
+    }, 6000);
   };
 
   return (
     <div>
+      {addmsj && (
+        <p className="text-green-500 mt-2 py-3">
+          The product has been added to your cart. <a className="font-semibold text-green-700" href='/cart'>Check your cart page →</a>
+        </p>
+      )}
       <button onClick={handleAddToCart} className="addtocartbtn">
         Add to Cart
       </button>
-      {addmsj && (
-        <p className="text-green-500 mt-2">
-          The product has been added to your cart.
-        </p>
-      )}
+      
     </div>
   );
 }
