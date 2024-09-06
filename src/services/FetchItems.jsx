@@ -33,6 +33,8 @@ const FetchItems = async (setProducts, amount = 20) => {
 
 		// Sätt Products till resultatet
 		setProducts(result);
+
+		// Fånga upp error
 	} catch (error) {
 		console.log(error);
 	}

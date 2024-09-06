@@ -33,6 +33,8 @@ const FetchSingleItem = async (setSingleProduct, id) => {
 
 		// Sätt SingleProduct till resultatet
 		setSingleProduct(result);
+
+		// Fånga upp error
 	} catch (error) {
 		console.log(error);
 	}
