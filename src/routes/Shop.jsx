@@ -16,7 +16,7 @@ export default function Shop() {
 	}, []);
 
 	return (
-		<div className="flex flex-wrap gap-x-7 justify-center p-2 bg-gray-100 ">
+		<div className="grid grid-cols-2 gap-6 md:grid-cols-4">
 			{products.map((product) => (
 				<Card
 					key={product.id}

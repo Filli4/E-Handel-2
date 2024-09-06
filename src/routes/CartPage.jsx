@@ -16,7 +16,7 @@ function CartPage() {
   };
 
   if (cartItems.length === 0) {
-    return <div>Your cart is empty.</div>;
+    return<div className="text-center py-8"><h1>Your cart is empty. Really?</h1><a className="bg-indigo-600 shadow-md font-semibold p-3 rounded-md hover:bg-indigo-500 text-sm text-white mt-5" href='/shop'>Start shopping now.</a></div>;
   }
 
   return (

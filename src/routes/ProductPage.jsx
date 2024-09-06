@@ -30,7 +30,7 @@ function ProductPage() {
 			<div className="w-1/2 flex flex-col justify-between gap-3">
 				<div className="flex flex-col gap-5">
 					<h1>{singleProduct.title}</h1>
-					<p className="pricetag">{singleProduct.price} <span>sek</span></p>
+					<p className="pricetag">{singleProduct.price} <span>usd</span></p>
 					<div className="flex flex-col justify-between">
 						<p>Rating: {singleProduct.rating.rate}</p>
 						<p>Category: {singleProduct.category}</p>

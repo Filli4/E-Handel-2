@@ -6,9 +6,7 @@ export default function ViewDetails(id) {
 	const navigate = useNavigate();
 	return (
 		<button
-			className="bg-green-300 shadow-md font-semibold p-3  
-    rounded-md 
-    hover:bg-green-500"
+			className="bg-indigo-600 shadow-md font-semibold p-3 rounded-md hover:bg-indigo-500 text-sm text-white"
 			onClick={() => navigate(`/product/${id.id}`)}>
 			View Details
 		</button>
