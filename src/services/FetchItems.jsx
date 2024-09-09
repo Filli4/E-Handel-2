@@ -11,7 +11,7 @@
 
 // --Viktor--
 const FetchItems = async (setProducts, amount = 20) => {
-	// Försök att hämta alla produkter baserat på dess id
+	// Försök att hämta alla produkter av angiven mängd
 	try {
 		// Utför en fetch
 		const url = `https://fakestoreapi.com/products?limit=${amount}`;
